@@ -46,11 +46,11 @@ The type of computations that the process does are well suited for graphics card
     - Laptop CPUs can often run the software, but will not be fast enough to train at reasonable speeds       
     - 笔记本上的CPU通常是可以跑这个软件的，但是会特别的慢。
 - **A powerful GPU**
-    - Currently, Nvidia GPUs are fully supported. and AMD graphics cards are partially supported through plaidML.    
-    -现在 GPU 已经完全支持了，并且AMD图像卡只是部分支持。
-    - If using an Nvidia GPU, then it needs to support at least CUDA Compute Capability 3.0 or higher.    
-    -如果用GPU，它需要至少支持CUDA Compute Capability 3.0 或者更高。
-      To see which version your GPU supports, consult this list: https://developer.nvidia.com/cuda-gpus     
+    - Currently, Nvidia GPUs are fully supported. and AMD graphics cards are partially supported through plaidML.         
+    - 现在 GPU 已经完全支持了，并且AMD图像卡只是部分支持。     
+    - If using an Nvidia GPU, then it needs to support at least CUDA Compute Capability 3.0 or higher.        
+    - 如果用GPU，它需要至少支持CUDA Compute Capability 3.0 或者更高。     
+      To see which version your GPU supports, consult this list: https://developer.nvidia.com/cuda-gpus        
       可以在https://developer.nvidia.com/cuda-gpus 中查看你的GOU支持哪一个版本。     
       Desktop cards later than the 7xx series are most likely supported.         
       最有可能支持7xx系列以后的桌面卡。
@@ -64,7 +64,7 @@ The type of computations that the process does are well suited for graphics card
 - **macOS**
   GPU support on macOS is limited due to lack of drivers/libraries from Nvidia.
 - **All operating systems must be 64-bit for Tensorflow to run.**     
--**所有的操作系统必须支持64位的TensorFlow**
+- **所有的操作系统必须支持64位的TensorFlow**
 
 Alternatively, there is a docker image that is based on Debian.
 
