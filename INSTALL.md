@@ -1,9 +1,9 @@
 # Installing faceswap
-- [Installing faceswap](#Installing-faceswap)
-- [Prerequisites](#Prerequisites)
-  - [Hardware Requirements](#Hardware-Requirements)
-  - [Supported operating systems](#Supported-operating-systems)
-- [Important before you proceed](#Important-before-you-proceed)
+- [Installing faceswap](#Installing-faceswap) 安装 faceswap
+- [Prerequisites](#Prerequisites) 前提条件
+  - [Hardware Requirements](#Hardware-Requirements) 硬件需求
+  - [Supported operating systems](#Supported-operating-systems) 支持的操作系统
+- [Important before you proceed](#Important-before-you-proceed)  在继续之前重要的事
 - [Windows Install Guide](#Windows-Install-Guide)
   - [Installer](#Installer)
   - [Manual Install](#Manual-Install)
@@ -34,42 +34,54 @@
 # Prerequisites
 Machine learning essentially involves a ton of trial and error. You're letting a program try millions of different settings to land on an algorithm that sort of does what you want it to do. This process is really really slow unless you have the hardware required to speed this up. 
 
-The type of computations that the process does are well suited for graphics cards, rather than regular processors. **It is pretty much required that you run the training process on a desktop or server capable GPU.** Running this on your CPU means it can take weeks to train your model, compared to several hours on a GPU.
+机器学习基本上都会涉及大量的尝试和错误的结果, 你让一个程序尝试上百万种不同的设置，然后在某种程度上实现你想要的算法。这个过程是很慢很慢的，除非你使用硬件加速它。
 
-## Hardware Requirements
-**TL;DR: you need at least one of the following:**
+The type of computations that the process does are well suited for graphics cards, rather than regular processors. **It is pretty much required that you run the training process on a desktop or server capable GPU.** Running this on your CPU means it can take weeks to train your model, compared to several hours on a GPU.   
+该过程所做的计算类型非常适合图形卡，而不是常规处理器。**这就非常需要你在有GPU的机器上跑训练过程。**如果在CPU上跑会很慢。
+
+## Hardware Requirements  硬件条件
+**TL;DR: you need at least one of the following: 你至少需要满足下面一个条件**
 
 - **A powerful CPU**
-    - Laptop CPUs can often run the software, but will not be fast enough to train at reasonable speeds
+    - Laptop CPUs can often run the software, but will not be fast enough to train at reasonable speeds    
+    - 笔记本上的CPU通常是可以跑这个软件的，但是会特别的慢。
 - **A powerful GPU**
     - Currently, Nvidia GPUs are fully supported. and AMD graphics cards are partially supported through plaidML.
+    -现在 GPU 已经完全支持了，并且AMD图像卡只是部分支持。
     - If using an Nvidia GPU, then it needs to support at least CUDA Compute Capability 3.0 or higher.
+    -如果用GPU，它需要至少支持CUDA Compute Capability 3.0 或者更高。
       To see which version your GPU supports, consult this list: https://developer.nvidia.com/cuda-gpus
-      Desktop cards later than the 7xx series are most likely supported.
+      可以在https://developer.nvidia.com/cuda-gpus 中查看你的GOU支持哪一个版本。     
+      Desktop cards later than the 7xx series are most likely supported.    
+      最有可能支持7xx系列以后的桌面卡。
 - **A lot of patience**
 
-## Supported operating systems
+## Supported operating systems 支持的操作系统
 - **Windows 10**
   Windows 7 and 8 might work. Your mileage may vary. Windows has an installer which will set up everything you need. See: https://github.com/deepfakes/faceswap/releases
 - **Linux**
   Most Ubuntu/Debian or CentOS based Linux distributions will work.
 - **macOS**
   GPU support on macOS is limited due to lack of drivers/libraries from Nvidia.
-- All operating systems must be 64-bit for Tensorflow to run.
+- **All operating systems must be 64-bit for Tensorflow to run.**
+-**所有的操作系统必须支持64位的TensorFlow**
 
 Alternatively, there is a docker image that is based on Debian.
 
-# Important before you proceed
+# Important before you proceed 在继续之前重要的提醒
 **In its current iteration, the project relies heavily on the use of the command line, although a gui is available. if you are unfamiliar with command line tools, you may have difficulty setting up the environment and should perhaps not attempt any of the steps described in this guide.** This guide assumes you have intermediate knowledge of the command line. 
-
+ 在当前版本中，尽管图形界面已经可以用了，但是在此项目中还是很依赖用命令行执行步骤，如果你不熟悉命令行的工具，你也许很难去设置环境并且可能不应尝试本指南中描述的任何步骤。本指南假设你了解命令行的知识。    
 The developers are also not responsible for any damage you might cause to your own computer.
+开发者们也不会负责关于你在使用此项目中你电脑受损的情况。
 
-# Windows Install Guide
+# Windows Install Guide Windows 安装指南
 
-## Installer
+## Installer 安装器
 Windows now has an installer which installs everything for you and creates a desktop shortcut to launch straight into the GUI. You can download the installer from https://github.com/deepfakes/faceswap/releases.
+Windows 现在有安装器，它可以帮你安装好所有的事情并且在桌面创建一个快捷方式去直接启动GUI。你可以从 https://github.com/deepfakes/faceswap/releases 中下载安装器。
 
 If you have issues with the installer then read on for the more manual way to install faceswap on Windows.
+如果你用安装器遇到了问题，你可以使用手动的方式去安装faceswap。
 
 ## Manual Install
 
