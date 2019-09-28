@@ -1,7 +1,8 @@
 # deepfakes_faceswap
 <p align="center">
   <a href="https://faceswap.dev"><img src="https://i.imgur.com/zHvjHnb.png"></img></a>
-<br />FaceSwap is a tool that utilizes deep learning to recognize and swap faces in pictures and videos.
+<br />FaceSwap is a tool that utilizes deep learning to recognize and swap faces in pictures and videos.    
+FaceSwap 是一个工具：使用深度学习识别和交换图像中和视频中的人脸。
 </p>
 <p align="center">
 <img src = "https://i.imgur.com/nWHFLDf.jpg"></img>
@@ -17,7 +18,9 @@
 
 [![Build Status](https://travis-ci.org/deepfakes/faceswap.svg?branch=master)](https://travis-ci.org/deepfakes/faceswap) [![Documentation Status](https://readthedocs.org/projects/faceswap/badge/?version=latest)](https://faceswap.readthedocs.io/en/latest/?badge=latest)
 
-Make sure you check out [INSTALL.md](INSTALL.md) before getting started.
+Make sure you check out [INSTALL.md](INSTALL.md) before getting started.    
+在开始之前请确保核对 [INSTALL.md](INSTALL.md)文件。
+
 
 - [deepfakes_faceswap](#deepfakesfaceswap)
 - [Manifesto](#manifesto)
