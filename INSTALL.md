@@ -4,13 +4,13 @@
   - [Hardware Requirements](#Hardware-Requirements) 硬件需求
   - [Supported operating systems](#Supported-operating-systems) 支持的操作系统
 - [Important before you proceed](#Important-before-you-proceed)  在继续之前重要的事
-- [Windows Install Guide](#Windows-Install-Guide)
-  - [Installer](#Installer)
-  - [Manual Install](#Manual-Install)
-  - [Prerequisites](#Prerequisites-1)
+- [Windows Install Guide](#Windows-Install-Guide) 安装指南
+  - [Installer](#Installer) 安装器
+  - [Manual Install](#Manual-Install) 手动安装
+  - [Prerequisites](#Prerequisites-1) 前提条件
     - [Anaconda](#Anaconda)
     - [Git](#Git)
-  - [Setup](#Setup)
+  - [Setup](#Setup) 安装
     - [Anaconda](#Anaconda-1)
       - [Set up a virtual environment](#Set-up-a-virtual-environment)
       - [Entering your virtual environment](#Entering-your-virtual-environment)
@@ -39,7 +39,7 @@ Machine learning essentially involves a ton of trial and error. You're letting a
 The type of computations that the process does are well suited for graphics cards, rather than regular processors. **It is pretty much required that you run the training process on a desktop or server capable GPU.** Running this on your CPU means it can take weeks to train your model, compared to several hours on a GPU.       
 该过程所做的计算类型非常适合图形卡，而不是常规处理器。**这就非常需要你在有GPU的机器上跑训练过程**如果在CPU上跑会很慢。
 
-## Hardware Requirements  硬件条件
+## Hardware Requirements
 **TL;DR: you need at least one of the following: 你至少需要满足下面一个条件**
 
 - **A powerful CPU**
@@ -56,7 +56,7 @@ The type of computations that the process does are well suited for graphics card
       最有可能支持7xx系列以后的桌面卡。
 - **A lot of patience**
 
-## Supported operating systems 支持的操作系统
+## Supported operating systems 
 - **Windows 10**
   Windows 7 and 8 might work. Your mileage may vary. Windows has an installer which will set up everything you need. See: https://github.com/deepfakes/faceswap/releases
 - **Linux**
@@ -68,15 +68,15 @@ The type of computations that the process does are well suited for graphics card
 
 Alternatively, there is a docker image that is based on Debian.
 
-# Important before you proceed 在继续之前重要的提醒
+# Important before you proceed 
 **In its current iteration, the project relies heavily on the use of the command line, although a gui is available. if you are unfamiliar with command line tools, you may have difficulty setting up the environment and should perhaps not attempt any of the steps described in this guide.** This guide assumes you have intermediate knowledge of the command line.      
  在当前版本中，尽管图形界面已经可以用了，但是在此项目中还是很依赖用命令行执行步骤，如果你不熟悉命令行的工具，你也许很难去设置环境并且可能不应尝试本指南中描述的任何步骤。本指南假设你了解命令行的知识。    
 The developers are also not responsible for any damage you might cause to your own computer.     
 开发者们也不会负责关于你在使用此项目中你电脑受损的情况。     
 
-# Windows Install Guide Windows 安装指南
+# Windows Install Guide
 
-## Installer 安装器
+## Installer
 Windows now has an installer which installs everything for you and creates a desktop shortcut to launch straight into the GUI. You can download the installer from https://github.com/deepfakes/faceswap/releases.     
 Windows 现在有安装器，它可以帮你安装好所有的事情并且在桌面创建一个快捷方式去直接启动GUI。你可以从 https://github.com/deepfakes/faceswap/releases 中下载安装器。
 
@@ -85,18 +85,22 @@ If you have issues with the installer then read on for the more manual way to in
 
 ## Manual Install
 
-Setting up faceswap can seem a little intimidating to new users, but it isn't that complicated, although a little time consuming. It is recommended to use Linux where possible as Windows will hog about 20% of your GPU Memory, making faceswap run a little slower, however using Windows is perfectly fine and 100% supported.
+Setting up faceswap can seem a little intimidating to new users, but it isn't that complicated, although a little time consuming. It is recommended to use Linux where possible as Windows will hog about 20% of your GPU Memory, making faceswap run a little slower, however using Windows is perfectly fine and 100% supported.     
+对于新手来说安装faceswap看起来似乎有点害怕，尽管安装过程有点耗时，但是它并不复杂。我们建议尽可能的使用Linux系统，因为用Windows的话会多占20%的GPU内存, 并使得换脸的过程会慢一点，但是是100%支持Windows系统的。
 
 ## Prerequisites
 
 ### Anaconda
-Download and install the latest Python 3 Anaconda from: https://www.anaconda.com/download/. Unless you know what you are doing, you can leave all the options at default.
+Download and install the latest Python 3 Anaconda from: https://www.anaconda.com/download/. Unless you know what you are doing, you can leave all the options at default.      
+从下面网址中安装Anaconda3 https://www.anaconda.com/download/ 你可以保持所有的默认选择，除非你知道你在做什么。
 
 ### Git
-Download and install Git for Windows: https://git-scm.com/download/win. Unless you know what you are doing, you can leave all the options at default.
+Download and install Git for Windows: https://git-scm.com/download/win. Unless you know what you are doing, you can leave all the options at default.      
+在Windows中下载Git从下面的网址  https://git-scm.com/download/win  保持默认选项即可。    
 
 ## Setup
-Reboot your PC, so that everything you have just installed gets registered.
+Reboot your PC, so that everything you have just installed gets registered.     
+重启你的机器，让刚才安装的软件在系统中注册成功。
 
 ### Anaconda
 #### Set up a virtual environment
