@@ -24,27 +24,38 @@
 # Introduction
 
 ## Disclaimer
-This guide provides a high level overview of the faceswapping process. It does not aim to go into every available option, but will provide a useful entry point to using the software. There are many more options available that are not covered by this guide. These can be found, and explained, by passing the `-h` flag to the command line (eg: `python faceswap.py extract -h`) or by hovering over the options within the GUI.
+This guide provides a high level overview of the faceswapping process. It does not aim to go into every available option, but will provide a useful entry point to using the software. There are many more options available that are not covered by this guide. These can be found, and explained, by passing the `-h` flag to the command line (eg: `python faceswap.py extract -h`) or by hovering over the options within the GUI.     
+
+本指南概述了换脸过程。 它的目的不是深入解释所有可用的选项，而是为使用该软件提供有用的切入点。 本指南未涵盖所有可用选项，不过可以通过在命令行中传递-h标志（例如：pythonfaceswap.py extract -h）或将鼠标悬停在GUI中的选项中来找到这些选项和对应的解释。
+
 
 ## Getting Started
-So, you want to swap faces in pictures and videos? Well hold up, because first you gotta understand what this application will do, how it does it and what it can't currently do.
+So, you want to swap faces in pictures and videos? Well hold up, because first you gotta understand what this application will do, how it does it and what it can't currently do.     
+因此，您想交换图片和视频中的面孔吗？ 好吧，因为首先您要了解此应用程序将要执行的操作，其执行方式以及当前无法执行的操作。
 
-The basic operation of this script is simple. It trains a machine learning model to recognize and transform two faces based on pictures. The machine learning model is our little "bot" that we're teaching to do the actual swapping and the pictures are the "training data" that we use to train it. Note that the bot is primarily processing faces. Other objects might not work.
+The basic operation of this script is simple. It trains a machine learning model to recognize and transform two faces based on pictures. The machine learning model is our little "bot" that we're teaching to do the actual swapping and the pictures are the "training data" that we use to train it. Note that the bot is primarily processing faces. Other objects might not work.      
+该脚本的基本操作很简单。 它训练一种机器学习模型，以基于图片识别和变换两个面孔。 机器学习模型是我们正在教做实际交换的小“机器人”，而图片是我们用来训练它的“训练数据”。 请注意，机器人主要处理人脸。 其他对象可能不起作用。
 
-So here's our plan. We want to create a reality where Donald Trump lost the presidency to Nic Cage; we have his inauguration video; let's replace Trump with Cage.
+So here's our plan. We want to create a reality where Donald Trump lost the presidency to Nic Cage; we have his inauguration video; let's replace Trump with Cage.      
+我们有个计划，我们创造处一个情景，Cage扮演的Trump 失去总统职位的演讲。我们有Trump的视频，让我们用Cage将Trump替换掉就好。
+
 
 # Extract
 ## Gathering raw data
 In order to accomplish this, the bot needs to learn to recognize both face A (Trump) and face B (Nic Cage). By default, the bot doesn't know what a Trump or a Nic Cage looks like. So we need to show it lots of pictures and let it guess which is which. So we need pictures of both of these faces first.
+为了完成这个事情，机器需要学习识别A和B。在默认情况下，机器是不知道A和B看起来是什么样子的。所以我们需要给机器看大量的图片，让他猜哪个是哪个，所以我们首先需要A和B的面孔图片。     
 
-A possible source is Google, DuckDuckGo or Bing image search. There are scripts to download large amounts of images. A better source of images are videos (from interviews, public speeches, or movies) as these will capture many more natural poses and expressions. Fortunately FaceSwap has you covered and can extract faces from both still images and video files. See [Extracting video frames](#Extracting_video_frames) for more information.
+A possible source is Google, DuckDuckGo or Bing image search. There are scripts to download large amounts of images. A better source of images are videos (from interviews, public speeches, or movies) as these will capture many more natural poses and expressions. Fortunately FaceSwap has you covered and can extract faces from both still images and video files. See [Extracting video frames](#Extracting_video_frames) for more information.      
+一种可能的来源就是从网上搜索，有些脚本可以下载大量图像。 更好的图像来源是视频（来自访谈，公开演讲或电影），因为这些视频将捕获更多自然的姿势和表情。 幸运的是，FaceSwap已为您服务，可以从静止图像和视频文件中提取面部。从 [Extracting video frames](#Extracting_video_frames) 中可以查看更多的信息.      
 
 Feel free to list your image sets in the [faceswap Forum](https://faceswap.dev/forum), or add more methods to this file.
 
 So now we have a folder full of pictures/videos of Trump and a separate folder of Nic Cage. Let's save them in our directory where we put the FaceSwap project. Example: `~/faceswap/src/trump` and `~/faceswap/src/cage`
 
 ## Extracting Faces
-So here's a problem. We have a ton of pictures and videos of both our subjects, but these are just of them doing stuff or in an environment with other people. Their bodies are on there, they're on there with other people... It's a mess. We can only train our bot if the data we have is consistent and focuses on the subject we want to swap. This is where FaceSwap first comes in.
+So here's a problem. We have a ton of pictures and videos of both our subjects, but these are just of them doing stuff or in an environment with other people. Their bodies are on there, they're on there with other people... It's a mess. We can only train our bot if the data we have is consistent and focuses on the subject we want to swap. This is where FaceSwap first comes in.     
+但是这有一个问题，我们有关于我们两个主题的大量图片和视频，但是这些知识他们的一些素材，图片和视频里面有可能包含大量的其他的人或者身体部位或者背景等等，这些都是我们不关心的。我们只想让机器关注我们感兴趣要交换的东西（脸部）上，所以需要面部提取。这也是FaceSwap首次出现的地方。
+
 
 **Command Line:**
 ```bash
@@ -66,23 +77,25 @@ To extract trump from photos in a folder (Right hand folder icon):
 To extract cage from a video file (Left hand folder icon):
 ![ExtractVideo](https://i.imgur.com/TK02F0u.jpg)
 
-For input we either specify our photo directory or video file and for output we specify the folder where our extracted faces will be saved. The script will then try its best to recognize face landmarks, crop the images to a consistent size, and save the faces to the output folder. An `alignments.json` file will also be created and saved into your input folder. This file contains information about each of the faces that will be used by FaceSwap.
+For input we either specify our photo directory or video file and for output we specify the folder where our extracted faces will be saved. The script will then try its best to recognize face landmarks, crop the images to a consistent size, and save the faces to the output folder. An `alignments.json` file will also be created and saved into your input folder. This file contains information about each of the faces that will be used by FaceSwap.       
+对于输入我们可以指定图片的路径或者视频文件，对于输出我们需要指定从图片或者视频中提取出来的人脸所存储的路径。这个脚本将完成人脸关键点的识别、人脸的提取矫正并将图片输出到指定的文件中。`alignments.json`文件也会被创建并且保存到输入的文件夹中，这个文件包含了在FaceSwap中使用的每个人脸的信息。
 
-Note: this script will make grabbing test data much easier, but it is not perfect. It will (incorrectly) detect multiple faces in some photos and does not recognize if the face is the person whom we want to swap. Therefore: **Always check your training data before you start training.** The training data will influence how good your model will be at swapping.
+
+Note: this script will make grabbing test data much easier, but it is not perfect. It will (incorrectly) detect multiple faces in some photos and does not recognize if the face is the person whom we want to swap. Therefore: **Always check your training data before you start training.** The training data will influence how good your model will be at swapping.     
+该脚本将使获取测试数据更加容易，但这并不是完美的。 它会（错误地）检测到某些照片中的多张面孔，并且无法识别该面孔是否是我们要交换的人。因此：**始终在开始训练之前检查训练数据。**因为训练数据将影响模型在交换时的性能。
 
 ## General Tips
-When extracting faces for training, you are looking to gather around 500 to 5000 faces for each subject you wish to train. These should be of a high quality and contain a wide variety of angles, expressions and lighting conditions. 
+When extracting faces for training, you are looking to gather around 500 to 5000 faces for each subject you wish to train. These should be of a high quality and contain a wide variety of angles, expressions and lighting conditions.       
+提取面部进行训练时，您希望为每个想要训练的主题收集500至5000张面部。 这些应该是高质量的，并且包含各种各样的角度，表情和照明条件。
 
-You do not want to extract every single frame from a video for training as from frame to frame the faces will be very similar.
+You do not want to extract every single frame from a video for training as from frame to frame the faces will be very similar.     
+我们不想提取视频中的每一帧图像，因为连续帧图像之间的脸部基本没什么变化很相似。
 
-If you plan to train with a mask or use the Warp to Landmarks option, then you will need to copy the output `alignments.json` file from your source frames folder into your output faces folder for training. If you have extracted from multiple sources, you can use the alignments tool to merge several `alignments.json` files together.
+If you plan to train with a mask or use the Warp to Landmarks option, then you will need to copy the output `alignments.json` file from your source frames folder into your output faces folder for training. If you have extracted from multiple sources, you can use the alignments tool to merge several `alignments.json` files together.       
+如果你想使用mask 或者 warp to landmarks 的选项的话，需要将`alignments.json` 文件也拷贝到，输出的人脸文件夹中，用于训练使用。如果是从多个资源提取的人脸，则需要将`alignments.json` 文件合并到一起。
 
-You can see the full list of arguments for extracting by hovering over the options in the GUI or passing the help flag. i.e:
-```bash
-python faceswap.py extract -h
-```
-
-Some of the plugins have configurable options. You can find the config options in: `<faceswap_folder>\config\extract.ini`. You will need to have run Extract or the GUI at least once for this file to be generated.
+Some of the plugins have configurable options. You can find the config options in: `<faceswap_folder>\config\extract.ini`. You will need to have run Extract or the GUI at least once for this file to be generated.      
+一些插件具有可配置的选项。 您可以在以下目录中找到配置选项：`<faceswap_folder> \ config \ extract.ini`。 您至少需要运行一次Extract或GUI才能生成此文件。 
 
 # Training a model
 Ok, now you have a folder full of Trump faces and a folder full of Cage faces. What now? It's time to train our bot! This creates a 'model' that contains information about what a Cage is and what a Trump is and how to swap between the two.
