@@ -98,11 +98,14 @@ Some of the plugins have configurable options. You can find the config options i
 一些插件具有可配置的选项。 您可以在以下目录中找到配置选项：`<faceswap_folder> \ config \ extract.ini`。 您至少需要运行一次Extract或GUI才能生成此文件。 
 
 # Training a model
-Ok, now you have a folder full of Trump faces and a folder full of Cage faces. What now? It's time to train our bot! This creates a 'model' that contains information about what a Cage is and what a Trump is and how to swap between the two.
+Ok, now you have a folder full of Trump faces and a folder full of Cage faces. What now? It's time to train our bot! This creates a 'model' that contains information about what a Cage is and what a Trump is and how to swap between the two.     
+好，现在你有两个文件，一个是A的face, 一个是B的face。现在需要去训练模型，我们会创建一个模型，它包含了什么是A和什么是B以及如果去换他们俩的信息。
 
-The training process will take the longest, how long depends on many factors; the model used, the number of images, your GPU etc. However, a ballpark figure is 12-48 hours on GPU and weeks if training on CPU.
+The training process will take the longest, how long depends on many factors; the model used, the number of images, your GPU etc. However, a ballpark figure is 12-48 hours on GPU and weeks if training on CPU.      
+训练的过程是耗时最长的，他取决于很多因素，模型大小、数据量、GPU等等。但是，在GPU上的大致数字是12-48小时，而在CPU上训练则是数周。
 
-We specify the folders where the two faces are, and where we will save our training model.
+We specify the folders where the two faces are, and where we will save our training model.      
+我们需要指定两个人脸文件的地址，以及我们模型保存的地址。
 
 **Command Line:**
 ```bash
