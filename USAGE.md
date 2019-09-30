@@ -117,20 +117,27 @@ python faceswap.py train -A ~/faceswap/faces/trump -B ~/faceswap/faces/cage -m ~
 
 ![Training](https://i.imgur.com/j8bjk4I.jpg)
 
-Once you run the command, it will start hammering the training data. If you have a preview up, then you will see a load of blotches appear. These are the faces it is learning. They don't look like much, but then your model hasn't learned anything yet. Over time these will more and more start to resemble trump and cage.
+Once you run the command, it will start hammering the training data. If you have a preview up, then you will see a load of blotches appear. These are the faces it is learning. They don't look like much, but then your model hasn't learned anything yet. Over time these will more and more start to resemble trump and cage.     
+一旦运行命令，它将开始锻造训练数据。如果你有预览，你将会看到大量的斑点出现，这是学习人脸的过程。而且他们看起来并不相似，因模型还没有学到任何东西。不过随着模型的训练它们开始越来越相似。
 
-You want to leave your model learning until you are happy with the images in the preview. To stop training you can:
+You want to leave your model learning until you are happy with the images in the preview. To stop training you can:     
+您想让模型学习，直到对预览中的图像满意为止。 要停止训练，您可以：
 - Command Line: press "Enter" in the preview window or in the console
 - GUI: Press the Terminate button
 
-When stopping training, the model will save and the process will exit. This can take a little while, so be patient. The model will also save every 100 iterations or so.
+When stopping training, the model will save and the process will exit. This can take a little while, so be patient. The model will also save every 100 iterations or so.     
+停止训练后，模型将保存，并且过程将退出。 这可能需要一些时间，请耐心等待。 该模型还会每100迭代保存一个模型。
 
-You can stop and resume training at any time. Just point FaceSwap at the same folders and carry on.
+You can stop and resume training at any time. Just point FaceSwap at the same folders and carry on.     
+您可以随时停止并继续训练。 只需将FaceSwap指向相同的文件夹并继续。
+
 
 ## General Tips
-If you are training with a mask or using Warp to Landmarks, you will need to pass in an `alignments.json` file for each of the face sets. See [Extract - General Tips](#general-tips) for more information.
+If you are training with a mask or using Warp to Landmarks, you will need to pass in an `alignments.json` file for each of the face sets. See [Extract - General Tips](#general-tips) for more information.      
+如果你训练中用到了mask或者 Warp to Landmarks, 您需要用到 `alignments.json`文件，详情请看[Extract - General Tips](#general-tips)。
 
-The model is automatically backed up at every save iteration where the overall loss has dropped (i.e. the model has improved). If your model corrupts for some reason, you can go into the model folder and remove the `.bk` extension from the backups to restore the model from backup.
+The model is automatically backed up at every save iteration where the overall loss has dropped (i.e. the model has improved). If your model corrupts for some reason, you can go into the model folder and remove the `.bk` extension from the backups to restore the model from backup.      
+
 
 You can see the full list of arguments for training by hovering over the options in the GUI or passing the help flag. i.e:
 
